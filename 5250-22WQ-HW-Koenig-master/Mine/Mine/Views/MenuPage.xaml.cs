@@ -21,8 +21,8 @@ namespace Mine.Views
             menuItems = new List<HomeMenuItem>
             {
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" },
+                new HomeMenuItem {Id = MenuItemType.Game, Title="Game" },
                 new HomeMenuItem {Id = MenuItemType.Items, Title="Items" }
-                
             };
 
             ListViewMenu.ItemsSource = menuItems;
