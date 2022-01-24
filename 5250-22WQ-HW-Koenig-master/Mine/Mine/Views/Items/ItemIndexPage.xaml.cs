@@ -18,13 +18,13 @@ namespace Mine.Views
     [DesignTimeVisible(false)]
     public partial class ItemIndexPage : ContentPage
     {
-        ItemReadViewModel viewModel;
+        ItemIndexViewModel viewModel;
 
         public ItemIndexPage()
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new ItemReadViewModel();
+            BindingContext = viewModel = new ItemIndexViewModel();
         }
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
@@ -33,7 +33,7 @@ namespace Mine.Views
             if (item == null)
                 return;
 
-            await Navigation.PushAsync(new ItemReadPage(new ItemDetailViewModel(item)));
+            await Navigation.PushAsync(new ItemReadPage(new ItemReadViewModel(item)));
 
             // Manually deselect item.
             ItemsListView.SelectedItem = null;
