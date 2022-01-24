@@ -10,12 +10,12 @@ using Mine.Views;
 
 namespace Mine.ViewModels
 {
-    public class ItemReadViewModel : BaseViewModel
+    public class ItemIndexViewModel : BaseViewModel
     {
         public ObservableCollection<ItemModel> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
 
-        public ItemReadViewModel()
+        public ItemIndexViewModel()
         {
             Title = "Items";
             Items = new ObservableCollection<ItemModel>();
