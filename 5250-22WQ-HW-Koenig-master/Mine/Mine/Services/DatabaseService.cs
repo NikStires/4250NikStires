@@ -80,6 +80,12 @@ namespace Mine.Services
             return true;
         }
 
+
+        /// <summary>
+        /// checks if item is exists then deletes it from the database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>returns true if successful</returns>
         public async Task<bool> DeleteAsync(string id)
         {
             var data = await ReadAsync(id);
