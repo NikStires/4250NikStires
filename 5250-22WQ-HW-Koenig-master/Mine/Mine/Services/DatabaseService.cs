@@ -69,9 +69,23 @@ namespace Mine.Services
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// ReadAsync will take an ID and return the ItemModel
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Task<ItemModel> ReadAsync(string id)
         {
-            throw new NotImplementedException();
+            if(id == null)
+            {
+                return null;
+            }
+
+            //call the Database to read the ID
+            //using Linq syntax find the first record that has the ID that matches
+            var result = Database.Table<ItemModel>().FirstOrDefaultAsync(m => m.Id.Equals(id));
+
+            return result;
         }
 
         /// <summary>
